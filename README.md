@@ -5,7 +5,7 @@
 React와 Next.js를 활용한 개인 포트폴리오 사이트로, 프로젝트 경험과 기술 스택을 소개합니다.
 
 ## 🔗 배포 링크
-웹사이트: https://jaemin-s.github.io
+웹사이트: https://jaemin-s.github.io
 
 ## 🛠 기술 스택
 - Framework: React, Next.js
