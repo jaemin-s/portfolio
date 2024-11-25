@@ -31,7 +31,7 @@ jobs:
           git add .
           git commit -m "deloy"
           git remote add origin https://github.com/jaemin-s/jaemin-s.github.io.git
-          git push -f main
+          git push -f origin main
       # - name: Deploy
       #   uses: peaceiris/actions-gh-pages@v3
       #   with:
