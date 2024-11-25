@@ -5,7 +5,7 @@
   "homepage": "https://jaemin-s.github.io",
   "scripts": {
     "dev": "next dev",
-    "build": "npx tailwindcss -i ./build.css -o ./out/build.css --minify next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
