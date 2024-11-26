@@ -1,3 +1,4 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["airbnb","next/core-web-vitals", "next/typescript"],
+  "ignorePatterns":["/.next","/out"] // 검사 제외 목록
 }
