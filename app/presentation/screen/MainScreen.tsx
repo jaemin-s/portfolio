@@ -6,9 +6,7 @@ import Skills from '../component/article/Skills'
 import Projects from '../component/article/Projects'
 import Career from '../component/article/Career'
 
-type Props = {}
-
-const MainScreen = (props: Props) => {
+const MainScreen = () => {
   return (
     <div className="bg-gray-600 w-screen h-screen overflow-y-scroll">
       <ParallaxContainer imgSrc={"https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-01.webp"}>

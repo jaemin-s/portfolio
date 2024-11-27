@@ -1,9 +1,7 @@
 import React from 'react'
 import ArticleHeader from '../text/ArticleHeader'
 
-type Props = {}
-
-const Career = (props: Props) => {
+const Career = () => {
   return (
     <div className='h-full flex flex-col items-center justify-center'>
         <ArticleHeader str='CAREER'/>
