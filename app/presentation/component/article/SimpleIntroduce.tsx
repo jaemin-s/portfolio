@@ -8,7 +8,7 @@ const SimpleIntroduce = () => {
   return (
     <div className='h-full flex flex-col items-center justify-center'>
         <ArticleHeader str={str} color='#ffeeaa'/>
-        <p className='whitespace-pre-wrap text-center text-2xl'>{str2}</p>
+        <p className='whitespace-pre-wrap text-center text-xl'>{str2}</p>
     </div>
   )
 }
