@@ -15,7 +15,7 @@ const AboutMe = () => {
   return (
     <div className="h-full flex flex-col items-center justify-center">
       <ArticleHeader str="ABOUT ME" />
-      <div className="grid grid-cols-3 gap-x-10 gap-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-8">
         <AboutMeCard header="이름" body="심재민">
           <IconProfile width={size} height={size} />
         </AboutMeCard>
