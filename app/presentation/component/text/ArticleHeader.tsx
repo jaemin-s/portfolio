@@ -3,7 +3,9 @@ import React from 'react'
 
 const ArticleHeader = ({ str, color = '#ffffff' }: TextProps) => {
   return (
-    <p className='font-extrabold text-[12vmin] whitespace-pre-wrap text-center pb-4 border-b-4 mb-8' style={{ color }}>{str}</p>
+    <p className="font-extrabold text-[12vmin] whitespace-pre-wrap text-center pb-4 border-b-4 mb-8" style={{ color }}>
+      {str}
+    </p>
   )
 }
 

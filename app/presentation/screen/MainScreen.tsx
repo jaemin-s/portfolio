@@ -9,20 +9,20 @@ import Career from '../component/article/Career'
 const MainScreen = () => {
   return (
     <div className="bg-gray-600 w-screen h-screen overflow-y-scroll">
-      <ParallaxContainer imgSrc={"https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-01.webp"}>
-        <SimpleIntroduce/>
+      <ParallaxContainer imgSrc={'https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-01.webp'}>
+        <SimpleIntroduce />
       </ParallaxContainer>
-      <ParallaxContainer imgSrc={"https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-02.webp"}>
-        <AboutMe/>
+      <ParallaxContainer imgSrc={'https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-02.webp'}>
+        <AboutMe />
       </ParallaxContainer>
-      <ParallaxContainer imgSrc={"https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-03.webp"}>
-        <Skills/>
+      <ParallaxContainer imgSrc={'https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-03.webp'}>
+        <Skills />
       </ParallaxContainer>
-      <ParallaxContainer imgSrc={"https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-04.webp"}>
-        <Career/>
+      <ParallaxContainer imgSrc={'https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-04.webp'}>
+        <Career />
       </ParallaxContainer>
-      <ParallaxContainer imgSrc={"https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-05.webp"}>
-        <Projects/>
+      <ParallaxContainer imgSrc={'https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-05.webp'}>
+        <Projects />
       </ParallaxContainer>
     </div>
   )
