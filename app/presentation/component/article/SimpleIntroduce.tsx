@@ -7,7 +7,7 @@ const SimpleIntroduce = () => {
   return (
     <div className="h-full flex flex-col items-center justify-center">
       <ArticleHeader str={str} color="#ffeeaa" />
-      <div className="flex gap-10 h-fit items-center">
+      <div className="flex flex-col md:flex-row gap-10 h-fit items-center">
         <img
           className="w-40 h-40 object-cover object-top rounded-full"
           src="https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/personal/jm.jpg"
