@@ -8,9 +8,9 @@ const SimpleIntroduce = () => {
     <div className="h-full flex flex-col items-center justify-center">
       <ArticleHeader str={str} color="#ffeeaa" />
       <div className="flex gap-10 h-fit items-center">
-        <img
+        <image
           className="w-40 h-40 object-cover object-top rounded-full"
-          src="https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/personal/jm.jpg"
+          values="https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/personal/jm.jpg"
         />
         <p className="whitespace-pre-wrap text-center text-xl">{str2}</p>
       </div>
