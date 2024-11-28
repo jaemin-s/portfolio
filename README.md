@@ -55,6 +55,10 @@ app/
     └── utils/                # 유틸리티 함수
 ```
 
+## 참고 링크
+기술스택 이미지 : https://simpleicons.org/
+아이콘 이미지 : https://fonts.google.com/icons
+
 ## ✏️ 개선 사항
 -
 - 
