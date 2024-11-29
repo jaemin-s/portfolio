@@ -8,7 +8,7 @@ interface ParallaxProps {
 const ParallaxContainer: React.FC<ParallaxProps> = ({ children, imgSrc }) => {
   return (
     <section
-      className={'h-screen bg-cover relative parallaxGradient '}
+      className={'min-h-screen h-fit py-4 bg-cover relative parallaxGradient flex items-center justify-center'}
       style={{ backgroundImage: `url('${imgSrc}')`, backgroundAttachment: 'fixed' }}
     >
       {children}
