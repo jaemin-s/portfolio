@@ -19,7 +19,7 @@ const ProjectItemCard = (props: ProjectItem) => {
           <button className="text-sm px-3 py-1 bg-blue-500 text-white rounded-md hover:bg-blue-600">상세보기</button>
           {props.type === ProjectType.PERSONAL && (
             <button className="text-sm px-3 py-1 border border-stone-300 text-black rounded-md hover:bg-stone-200">
-              <a href="https://www.netflix.com/kr/" target="_blank">
+              <a href={props.links.demo} target="_blank">
                 바로가기
               </a>
             </button>
