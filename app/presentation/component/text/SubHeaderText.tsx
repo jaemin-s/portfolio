@@ -1,12 +1,8 @@
-import { TextProps } from '@/app/domain/entities/text.entity'
+import { TextProps } from '@/app/domain/entities/Text.entity'
 import React from 'react'
 
-const SubHeaderText = ({ str, color = '#ffffff' }: TextProps) => {
-  return (
-    <h3 className="font-bold text-xl" style={{ color }}>
-      {str}
-    </h3>
-  )
+const SubHeaderText = ({ children, className = '' }: TextProps) => {
+  return <h3 className={`font-bold text-xl ${className}`}>{children}</h3>
 }
 
 export default SubHeaderText

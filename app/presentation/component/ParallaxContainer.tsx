@@ -1,15 +1,13 @@
-import React, { ReactNode } from 'react'
+import { ParallaxProps } from '@/app/domain/entities/Parallax.entity'
+import React from 'react'
 
-interface ParallaxProps {
-  children?: ReactNode
-  imgSrc: string
-}
+const ParallaxContainer = ({ children, imgSrc, backgroundColor }: ParallaxProps): JSX.Element => {
+  const backgroundStyle = !!imgSrc ? { backgroundImage: `url('${imgSrc}')` } : { background: backgroundColor }
 
-const ParallaxContainer: React.FC<ParallaxProps> = ({ children, imgSrc }) => {
   return (
     <section
       className={'min-h-screen h-fit py-4 bg-cover relative parallaxGradient flex items-center justify-center'}
-      style={{ backgroundImage: `url('${imgSrc}')`, backgroundAttachment: 'fixed' }}
+      style={{ ...backgroundStyle, backgroundAttachment: 'fixed' }}
     >
       {children}
     </section>

@@ -7,8 +7,8 @@ const Skills = async () => {
   const skillCategoryList = await skillRepository.getSkillCategories()
 
   return (
-    <div className="min-h-full h-fit flex flex-col items-center justify-center">
-      <ArticleHeader str="SKILLS" color="#000000" />
+    <div className="min-h-full h-fit flex flex-col items-center justify-center text-black">
+      <ArticleHeader className="border-black">SKILLS</ArticleHeader>
       <section className="flex flex-col gap-8">
         {skillCategoryList.map((item) => (
           <SkillCategoryComponent key={item.categoryName} categoryName={item.categoryName} skillList={item.skillList} />

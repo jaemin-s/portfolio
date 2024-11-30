@@ -1,12 +1,8 @@
-import { TextProps } from '@/app/domain/entities/text.entity'
+import { TextProps } from '@/app/domain/entities/Text.entity'
 import React from 'react'
 
-const BodyText = ({ str, color = '#ffffff' }: TextProps) => {
-  return (
-    <p className="text-lg whitespace-pre-wrap" style={{ color }}>
-      {str}
-    </p>
-  )
+const BodyText = ({ children, className = '' }: TextProps) => {
+  return <p className={`text-lg whitespace-pre-wrap ${className}`}>{children}</p>
 }
 
 export default BodyText

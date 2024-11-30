@@ -1,6 +1,6 @@
 import React from 'react'
 import SubHeaderText from '../text/SubHeaderText'
-import { Skill, SkillCategory } from '@/app/domain/entities/skill.entity'
+import { Skill, SkillCategory } from '@/app/domain/entities/Skill.entity'
 
 const SkillCategoryComponent = ({ categoryName, skillList }: SkillCategory) => {
   function getLogoUrl(item: Skill) {
@@ -14,7 +14,7 @@ const SkillCategoryComponent = ({ categoryName, skillList }: SkillCategory) => {
   return (
     <section className="flex flex-col md:flex-row gap-6">
       <div className="w-36">
-        <SubHeaderText str={categoryName} />
+        <SubHeaderText className={''}>{categoryName}</SubHeaderText>
       </div>
       <div className="flex flex-wrap gap-2 w-80 md:w-[36rem]">
         {skillList.map((item) => (

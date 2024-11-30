@@ -1,4 +1,4 @@
-import { SvgStyle } from '@/app/domain/entities/svgStyle.entity'
+import { SvgStyle } from '@/app/domain/entities/SvgStyle.entity'
 import React from 'react'
 
 const IconCalendar = ({ color = '#ffffff', width = '24px', height = '24px' }: SvgStyle) => {

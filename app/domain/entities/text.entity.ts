@@ -1,5 +1,4 @@
 export interface TextProps {
-    str: string;
-    color?: string;
-   }
-   
+  children: React.ReactNode
+  className?: string
+}
