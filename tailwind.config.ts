@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss'
-import { Colors } from './app/domain/enums/Color.enum'
+import { Colors } from './app/domain/enums/color.enum'
 
 export default {
   content: [
