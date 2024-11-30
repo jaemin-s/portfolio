@@ -18,6 +18,7 @@ export default {
         sage: Colors.SAGE, //font-color : forest, copper
         cream: Colors.CREAM, //font-color : forest, copper
         black: Colors.BLACK,
+        gray: Colors.GRAY,
       },
     },
   },

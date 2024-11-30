@@ -1,6 +1,6 @@
 export interface SkillCategory {
   categoryName: string
-  skillList: Array<Skill>
+  skillList: Skill[]
 }
 
 export interface Skill {
