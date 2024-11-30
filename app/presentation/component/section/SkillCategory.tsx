@@ -1,6 +1,6 @@
 import React from 'react'
 import SubHeaderText from '../text/SubHeaderText'
-import { Skill, SkillCategory } from '@/app/domain/entities/Skill.entity'
+import { Skill, SkillCategory } from '@/app/domain/entities/skill.entity'
 
 const SkillCategoryComponent = ({ categoryName, skillList }: SkillCategory) => {
   function getLogoUrl(item: Skill) {

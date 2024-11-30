@@ -1,5 +1,5 @@
-import { SkillCategory } from '@/app/domain/entities/Skill.entity'
-import { SkillRepository } from '@/app/domain/repositories/Skill.repo'
+import { SkillCategory } from '@/app/domain/entities/skill.entity'
+import { SkillRepository } from '@/app/domain/repositories/skill.repo'
 
 export class SkillRepositoryImpl implements SkillRepository {
   /*
