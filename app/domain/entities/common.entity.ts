@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export interface TextProps {
+export interface ChildrenProps {
   children: ReactNode
-  className?: string
+  className?: ''
 }
