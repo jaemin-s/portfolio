@@ -1,4 +1,4 @@
-import { AboutMeProps } from '@/app/domain/entities/AboutMe.entity'
+import { AboutMeProps } from '@/app/domain/entities/aboutMe.entity'
 import React from 'react'
 import SubHeaderText from '../text/SubHeaderText'
 import BodyText from '../text/BodyText'

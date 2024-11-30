@@ -7,7 +7,7 @@ import IconLocation from '../svg/IconLocation'
 import IconPhone from '../svg/IconPhone'
 import IconMail from '../svg/IconMail'
 import IconEdu from '../svg/IconEdu'
-import { Colors } from '@/app/domain/enums/Color.enum'
+import { Colors } from '@/app/domain/enums/color.enum'
 
 const AboutMe = () => {
   const size = '48px'

@@ -1,4 +1,4 @@
-import { TextProps } from '@/app/domain/entities/Text.entity'
+import { TextProps } from '@/app/domain/entities/text.entity'
 import React from 'react'
 
 const ArticleHeader = ({ children, className = '' }: TextProps) => {

@@ -1,4 +1,4 @@
-import { SvgStyle } from '@/app/domain/entities/SvgStyle.entity'
+import { SvgStyle } from '@/app/domain/entities/svgStyle.entity'
 import React from 'react'
 
 function IconEdu({ color = '#ffffff', width = '24px', height = '24px' }: SvgStyle) {

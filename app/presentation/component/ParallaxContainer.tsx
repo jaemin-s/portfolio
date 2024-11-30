@@ -1,4 +1,4 @@
-import { ParallaxProps } from '@/app/domain/entities/Parallax.entity'
+import { ParallaxProps } from '@/app/domain/entities/parallax.entity'
 import React from 'react'
 
 const ParallaxContainer = ({ children, imgSrc, backgroundColor }: ParallaxProps): JSX.Element => {
