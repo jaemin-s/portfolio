@@ -12,17 +12,25 @@ const CareerSection = async () => {
       <ul className="flex flex-col gap-12">
         {CareerList.map((item, index) => (
           <li className="flex" key={'careerItem_' + index}>
-            <div className="mr-8 bg-slate-50 p-4 rounded-full h-fit w-fit">
-              {/* <Image src="https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/logo/homechoice.png" alt="" /> */}
+            <div className="hidden md:block mr-8 bg-slate-50 p-4 rounded-xl h-fit w-fit">
               <img
                 className="w-40"
                 src="https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/logo/homechoice.svg"
                 alt=""
               />
             </div>
-            <div className="border-l-2 border-stone-400 pl-8">
+            <div className="md:border-l-2 border-stone-400 px-8">
               <header className="mb-6">
-                <h3 className="text-2xl mb-4 font-semibold">{item.companyName}</h3>
+                <div className="flex items-center mb-4">
+                  <div className="md:hidden mr-2 bg-slate-50 p-1 rounded-md h-fit w-fit">
+                    <img
+                      className="w-8"
+                      src="https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/logo/homechoice.svg"
+                      alt=""
+                    />
+                  </div>
+                  <h3 className="text-2xl font-semibold leading-none">{item.companyName}</h3>
+                </div>
                 <DateText className="mb-2">{item.employmentPeriod}</DateText>
                 <BodyText>{item.companyDescription}</BodyText>
               </header>

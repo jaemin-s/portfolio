@@ -9,7 +9,7 @@ import { Colors } from '@/app/domain/enums/Color.enum'
 
 const MainScreen = () => {
   return (
-    <div className="bg-gray-600 w-screen h-screen overflow-y-scroll">
+    <div className="bg-gray-600 w-screen h-screen overflow-y-scroll break-keep">
       {/* <ParallaxContainer imgSrc={'https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-green-clean.webp'}> */}
       <ParallaxContainer backgroundColor={Colors.CREAM}>
         <SimpleIntroduce />
