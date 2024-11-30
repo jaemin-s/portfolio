@@ -5,7 +5,7 @@ import AboutMe from '../component/article/AboutMe'
 import Skills from '../component/article/Skills'
 import Projects from '../component/article/Projects'
 import Career from '../component/article/Career'
-import { Colors } from '@/app/domain/enums/color.enum'
+import { Colors } from '@/app/domain/enums/Color.enum'
 
 const MainScreen = () => {
   return (
