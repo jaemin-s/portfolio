@@ -1,7 +1,6 @@
 import { ProjectItemProps } from '@/app/domain/entities/project.entity'
 import React from 'react'
 import CommonCard from './CommonCard'
-import { ProjectType } from '@/app/domain/enums/project.enum'
 
 const ProjectItemCard = ({ item, onClickDetailButton }: ProjectItemProps) => {
   return (
