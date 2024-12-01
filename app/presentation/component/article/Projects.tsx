@@ -1,83 +1,23 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import ArticleHeader from '../text/ArticleHeader'
 import ProjectItemCard from '../card/ProjectItemCard'
-import { ProjectType } from '@/app/domain/enums/project.enum'
+import CommonDialog from '../dialog/CommonDialog'
+import { ProjectRepository } from '@/app/data/repositories'
+import ProjectDialog from '../dialog/ProjectDialog'
+import { ProjectItem } from '@/app/domain/entities/project.entity'
 
 const Projects = () => {
-  const projectItemList = [
-    {
-      title: '오초이스',
-      description: '오초이스 설명 입니다',
-      simpleStack: 'React JavaScript Tizen WebOS',
-      detailStacks: [{ title: 'React', description: '리액트 사용 이유' }],
-      period: '2024.01 ~ 2024.12',
-      image: 'https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/portfolio/netflix.webp',
-      type: ProjectType.WORK,
-      features: [''],
-      company: '(주)홈초이스',
-      links: { demo: '', github: '' },
-    },
-    {
-      title: '오초이스',
-      description: '오초이스 설명 입니다',
-      simpleStack: 'React JavaScript Tizen WebOS',
-      detailStacks: [{ title: 'React', description: '리액트 사용 이유' }],
-      period: '2024.01 ~ 2024.12',
-      image: 'https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/portfolio/tving.webp',
-      type: ProjectType.PERSONAL,
-      features: [''],
-      company: '(주)홈초이스',
-      links: { demo: 'https://www.tving.com', github: '' },
-    },
-    {
-      title: '오초이스',
-      description: '오초이스 설명 입니다',
-      simpleStack: 'React JavaScript Tizen WebOS',
-      detailStacks: [{ title: 'React', description: '리액트 사용 이유' }],
-      period: '2024.01 ~ 2024.12',
-      image: 'https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/portfolio/netflix.webp',
-      type: ProjectType.PERSONAL,
-      features: [''],
-      company: '(주)홈초이스',
-      links: { demo: 'https://www.netflix.com/kr/', github: '' },
-    },
-    {
-      title: '오초이스',
-      description: '오초이스 설명 입니다',
-      simpleStack: 'React JavaScript Tizen WebOS',
-      detailStacks: [{ title: 'React', description: '리액트 사용 이유' }],
-      period: '2024.01 ~ 2024.12',
-      image: 'https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/portfolio/tving.webp',
-      type: ProjectType.WORK,
-      features: [''],
-      company: '(주)홈초이스',
-      links: { demo: '', github: '' },
-    },
-    {
-      title: '오초이스',
-      description: '오초이스 설명 입니다',
-      simpleStack: 'React JavaScript Tizen WebOS',
-      detailStacks: [{ title: 'React', description: '리액트 사용 이유' }],
-      period: '2024.01 ~ 2024.12',
-      image: 'https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/portfolio/netflix.webp',
-      type: ProjectType.WORK,
-      features: [''],
-      company: '(주)홈초이스',
-      links: { demo: '', github: '' },
-    },
-    {
-      title: '오초이스',
-      description: '오초이스 설명 입니다',
-      simpleStack: 'React JavaScript Tizen WebOS',
-      detailStacks: [{ title: 'React', description: '리액트 사용 이유' }],
-      period: '2024.01 ~ 2024.12',
-      image: 'https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/portfolio/netflix.webp',
-      type: ProjectType.WORK,
-      features: [''],
-      company: '(주)홈초이스',
-      links: { demo: '', github: '' },
-    },
-  ]
+  const [isOpen, setIsOpen] = useState(false)
+  const [itemData, setItemData] = useState<ProjectItem | null>(null)
+
+  const projectItemList = ProjectRepository.getProjectList()
+
+  const handleDetailButton = (item: ProjectItem) => {
+    setIsOpen(true)
+    setItemData(item)
+  }
 
   return (
     <div className="h-full flex flex-col items-center justify-center text-forest">
@@ -85,10 +25,15 @@ const Projects = () => {
       <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {projectItemList.map((project, index) => (
           <li key={index}>
-            <ProjectItemCard {...project} />
+            <ProjectItemCard item={project} onClickDetailButton={handleDetailButton} />
           </li>
         ))}
       </ul>
+      {itemData && (
+        <CommonDialog isOpen={isOpen} onClose={() => setIsOpen(false)}>
+          <ProjectDialog {...itemData} />
+        </CommonDialog>
+      )}
     </div>
   )
 }

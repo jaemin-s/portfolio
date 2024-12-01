@@ -3,14 +3,16 @@ import { ProjectType } from '../enums/project.enum'
 export interface ProjectItem {
   title: string
   description: string
-  simpleStack: string
-  detailStacks: StackDescriptions[]
   period: string
   image: string
-  type: ProjectType
-  features: string[]
-  company: string
   links: ProjectLinks
+  stackBadges: string[]
+  previewUrls: string[]
+  type: ProjectType
+  stackCategories: StackCategory[]
+  features: Feature[]
+  functions: FunctionDecription[]
+  company: string
 }
 
 export interface ProjectLinks {
@@ -18,7 +20,24 @@ export interface ProjectLinks {
   demo: string
 }
 
-export interface StackDescriptions {
+export interface ProjectItemProps {
+  item: ProjectItem
+  onClickDetailButton: (arg0: ProjectItem) => void
+}
+
+export interface Feature {
   title: string
   description: string
+  comment?: string
+}
+
+export interface FunctionDecription {
+  title: string
+  description: string[]
+  comment?: string
+}
+
+export interface StackCategory {
+  title: string
+  stacks: string[]
 }
