@@ -1,34 +1,30 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import ParallaxContainer from "./component/common/ParallaxContainer";
+import { Colors } from "./data/types/enums/color.enum";
+import Introduce from "./component/section/Introduce";
+import AboutMe from "./component/section/AboutMe";
+import Skills from "./component/section/Skills";
+import Career from "./component/section/Career";
+import Projects from "./component/section/Projects";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="bg-gray-600 w-screen h-screen overflow-y-scroll break-keep">
+      <ParallaxContainer backgroundColor={Colors.CREAM}>
+        <Introduce />
+      </ParallaxContainer>
+      <ParallaxContainer imgSrc="https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-green-dandelion.webp">
+        <AboutMe />
+      </ParallaxContainer>
+      <ParallaxContainer imgSrc="https://github.com/jaemin-s/jaemin-s/raw/refs/heads/main/image/bg-white-magazine.webp">
+        <Skills />
+      </ParallaxContainer>
+      <ParallaxContainer backgroundColor={Colors.SAND}>
+        <Career />
+      </ParallaxContainer>
+      <ParallaxContainer backgroundColor={Colors.SAND}>
+        <Projects />
+      </ParallaxContainer>
+    </div>
   );
 }
 

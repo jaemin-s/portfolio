@@ -21,9 +21,30 @@ yarn set version berry
 
 ### 3. Tailwind CSS
 
+1. Install Tailwind CSS
+
 ```
 yarn add -D tailwindcss postcss autoprefixer
 yarn tailwindcss init -p
+```
+
+2. Configure template paths
+
+```
+//tailwind.config.js
+content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ]
+```
+
+3. Add the Tailwind directives to CSS
+
+```
+//index.css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
 ### 4. ESLint
