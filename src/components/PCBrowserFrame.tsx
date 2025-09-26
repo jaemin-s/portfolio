@@ -5,8 +5,7 @@ interface PCBrowserFrameProps {
   url?: string;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function PCBrowserFrame({ children, url = "https://example.com" }: PCBrowserFrameProps) {
+export function PCBrowserFrame({ children }: PCBrowserFrameProps) {
   return (
     <div className="bg-gray-200 p-2 rounded-lg shadow-xl max-w-2xl mx-auto">
       {/* Browser Chrome */}

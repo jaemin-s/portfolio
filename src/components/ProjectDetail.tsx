@@ -1,4 +1,3 @@
-import React from 'react';
 import { PCBrowserFrame } from './PCBrowserFrame';
 import { MobileFrame } from './MobileFrame';
 import { TVFrame } from './TVFrame';
@@ -182,11 +181,7 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                       {deviceType === 'pc' ? (
                         <div className="w-full max-w-md">
                           <PCBrowserFrame>
-                            {/* <ImageWithFallback
-                              src={image}
-                              alt={`${title} 추가 스크린샷 ${index + 1}`}
-                              className="w-full h-full object-cover"
-                            /> */}
+                            <div>{image}</div>
                           </PCBrowserFrame>
                         </div>
                       ) : deviceType === 'tv' ? (

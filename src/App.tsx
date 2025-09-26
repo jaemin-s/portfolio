@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import { PortfolioCard } from './components/PortfolioCard';
 import { ProjectDetail } from './components/ProjectDetail';
 import { Button } from './components/ui/button';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { ChevronDown, Github, Mail, ExternalLink, ArrowUp } from 'lucide-react';
+import { ChevronDown, Github, Mail, ArrowUp } from 'lucide-react';
 
 const portfolioProjects = [
   {

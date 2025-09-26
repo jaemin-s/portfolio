@@ -1,4 +1,3 @@
-import React from 'react';
 import { PCBrowserFrame } from './PCBrowserFrame';
 import { MobileFrame } from './MobileFrame';
 import { TVFrame } from './TVFrame';
@@ -22,8 +21,7 @@ interface PortfolioCardProps {
   index: number;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function PortfolioCard({ project, index }: PortfolioCardProps) {
+export function PortfolioCard({ project }: PortfolioCardProps) {
   const {
     title,
     description,
