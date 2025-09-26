@@ -1,63 +1,73 @@
-# 포트폴리오
+# React + TypeScript + Vite
 
-## 주요 기술
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-### 1. Vite
+Currently, two official plugins are available:
 
-```
-yarn create vite . --template react-ts
-or
-yarn create vite projectName --template react-ts
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-yarn
-yarn dev
-```
+## React Compiler
 
-### 2. Yarn Berry
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-```
-yarn set version berry
-```
+## Expanding the ESLint configuration
 
-### 3. Tailwind CSS
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-1. Install Tailwind CSS
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-```
-yarn add -D tailwindcss postcss autoprefixer
-yarn tailwindcss init -p
-```
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-2. Configure template paths
-
-```
-//tailwind.config.js
-content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ]
-```
-
-3. Add the Tailwind directives to CSS
-
-```
-//index.css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
 
-### 4. ESLint
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```
-yarn add -D exlint
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-yarn create @eslint/config
-```
-
-### 5. prettier
-
-```
-yarn add -D --exact prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react-hooks
-yarn prettier . --write
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 ```
