@@ -115,7 +115,7 @@ export function PortfolioCard({ project, index }: PortfolioCardProps) {
           </div>
 
           {/* 우측: 디바이스 프레임 */}
-          <div className="flex justify-center lg:justify-end max-h-[500px] items-center">
+          <div className="flex justify-center lg:justify-end w-full items-center">
             {deviceType === "pc" ? (
               <PCBrowserFrame url={url}>
                 {image ? (

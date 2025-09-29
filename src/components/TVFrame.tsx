@@ -6,25 +6,17 @@ interface TVFrameProps {
 
 export function TVFrame({ children }: TVFrameProps) {
   return (
-    <div className="mx-auto">
-      <div className="bg-gray-900 p-1.5 rounded-lg shadow-2xl max-w-2xl mx-auto relative">
+    <div className="mx-auto w-full">
+      <div className="bg-gray-900 p-1.5 rounded-lg shadow-2xl max-w-2xl mx-auto relative w-full">
         <div className="bg-black p-1 rounded-md">
           <div
-            className="bg-white relative overflow-hidden rounded-sm"
+            className="bg-white relative overflow-hidden rounded-sm flex items-center justify-center w-full"
             style={{
               aspectRatio: "16/9",
-              height: "300px",
+              width: "100%",
             }}
           >
-            {children || (
-              <div className="h-full flex items-center justify-center text-gray-400">
-                <div className="text-center">
-                  <div className="text-6xl mb-4">📺</div>
-                  <p>Smart TV Content</p>
-                  <p className="text-sm">1920 × 1080</p>
-                </div>
-              </div>
-            )}
+            {children || <div></div>}
           </div>
         </div>
 
