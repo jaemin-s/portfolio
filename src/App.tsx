@@ -3,6 +3,7 @@ import { PortfolioCard } from "./components/PortfolioCard";
 import { ProjectDetail } from "./components/ProjectDetail";
 import { Button } from "./components/ui/button";
 import { ChevronDown, Github, Mail, ArrowUp, ExternalLink } from "lucide-react";
+import { Header } from "./components/Header";
 
 const portfolioProjects = [
   {
@@ -185,52 +186,13 @@ export default function App() {
       {/* 메인 콘텐츠 */}
       <div className="relative z-10">
         {/* 헤더 */}
-        <header className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/10">
-          <div className="max-w-7xl mx-auto px-8 py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-                  <div className="w-4 h-4 bg-green-500 rounded-sm"></div>
-                </div>
-                <span className="text-white text-xl">Portfolio</span>
-              </div>
-
-              <div className="flex items-center space-x-2 md:space-x-4">
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-white hover:bg-white/10 hidden sm:flex"
-                >
-                  <Github className="w-4 h-4 mr-2" />
-                  GitHub
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-white hover:bg-white/10 hidden sm:flex"
-                >
-                  <Mail className="w-4 h-4 mr-2" />
-                  Contact
-                </Button>
-                {/* 모바일용 아이콘만 */}
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-white hover:bg-white/10 sm:hidden w-8 h-8 p-0"
-                >
-                  <Github className="w-4 h-4" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-white hover:bg-white/10 sm:hidden w-8 h-8 p-0"
-                >
-                  <Mail className="w-4 h-4" />
-                </Button>
-              </div>
-            </div>
-          </div>
-        </header>
+        <Header
+          title="Portfolio"
+          onClickGithub={() =>
+            window.open("https://github.com/your-id", "_blank")
+          }
+          onClickMail={() => (window.location.href = "mailto:you@example.com")}
+        ></Header>
 
         {/* 프로젝트 섹션들 */}
         <div className="pt-20">
@@ -248,66 +210,6 @@ export default function App() {
             </div>
           ))}
         </div>
-
-        {/* 섹션 네비게이션 - PC만 표시 - 배포 환경에서 동작 안함으로 주석 처리 */}
-        {/* <div className="hidden xl:block fixed left-8 top-1/2 transform -translate-y-1/2 z-50">
-          <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 border border-white/20">
-            <div className="space-y-4">
-              {portfolioProjects.map((project, projectIndex) => (
-                <div key={projectIndex} className="space-y-2">
-                  <div className="text-white/60 text-xs uppercase tracking-wider">
-                    Project {projectIndex + 1}
-                  </div>
-                  <button
-                    onClick={() => scrollToSection(projectIndex * 2)}
-                    className={`w-full text-left p-2 rounded text-xs transition-all ${
-                      currentSection === projectIndex * 2
-                        ? 'bg-white/20 text-white'
-                        : 'text-white/60 hover:text-white/80 hover:bg-white/10'
-                    }`}
-                  >
-                    Overview
-                  </button>
-                  <button
-                    onClick={() => scrollToSection(projectIndex * 2 + 1)}
-                    className={`w-full text-left p-2 rounded text-xs transition-all ${
-                      currentSection === projectIndex * 2 + 1
-                        ? 'bg-white/20 text-white'
-                        : 'text-white/60 hover:text-white/80 hover:bg-white/10'
-                    }`}
-                  >
-                    Details
-                  </button>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div> */}
-
-        {/* 모바일 네비게이션 - 하단에 간단한 인디케이터 - 배포 환경에서 동작 안함으로 주석 처리 */}
-        {/* <div className="xl:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
-          <div className="bg-white/10 backdrop-blur-md rounded-full px-4 py-2 border border-white/20">
-            <div className="flex items-center space-x-3">
-              <div className="text-white text-sm">
-                {Math.floor(currentSection / 2) + 1} / {portfolioProjects.length}
-              </div>
-              <div className="flex space-x-1">
-                {portfolioProjects.map((_, projectIndex) => (
-                  <div key={projectIndex} className="flex space-x-1">
-                    <button
-                      onClick={() => scrollToSection(projectIndex * 2)}
-                      className={`w-2 h-2 rounded-full transition-all ${
-                        Math.floor(currentSection / 2) === projectIndex
-                          ? 'bg-white w-4'
-                          : 'bg-white/40'
-                      }`}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div> */}
 
         {/* 스크롤 진행률 - PC 버전 */}
         <div className="hidden lg:block fixed right-8 top-1/2 transform -translate-y-1/2 z-50">
