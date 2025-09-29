@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface PCBrowserFrameProps {
   children?: React.ReactNode;
@@ -19,18 +19,18 @@ export function PCBrowserFrame({ children }: PCBrowserFrameProps) {
               <div className="w-3 h-3 bg-green-500 rounded-full"></div>
             </div>
           </div>
-          
+
           <div className="flex items-center space-x-1">
             <div className="w-6 h-6 text-gray-400">⚙️</div>
           </div>
         </div>
 
         {/* Content Area */}
-        <div 
+        <div
           className="bg-white relative overflow-hidden"
-          style={{ 
-            aspectRatio: '1920/1080',
-            height: '300px'
+          style={{
+            aspectRatio: "1920/1080",
+            height: "300px",
           }}
         >
           {children || (
