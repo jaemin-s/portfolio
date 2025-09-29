@@ -65,44 +65,42 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
             {additionalImages && additionalImages.length > 0 && (
               <div
                 className={
-                  deviceType === "pc"
-                    ? "grid grid-cols-1 md:grid-cols-2 gap-6"
-                    : "space-y-8"
+                  deviceType === "mobile"
+                    ? "grid grid-cols-2 gap-6"
+                    : "grid grid-cols-1 gap-6"
                 }
               >
                 {additionalImages.map((image, index) => (
                   <div key={index} className="flex justify-center">
                     {deviceType === "pc" ? (
-                      <div className="w-full max-w-xs">
+                      <div className="w-full">
                         <PCBrowserFrame>
                           {/* <ImageWithFallback
-                            src={image}
-                            alt={`${title} 인터페이스 ${index + 1}`}
-                            className="w-full h-full object-cover"
-                          /> */}
+                src={image}
+                alt={`${title} 인터페이스 ${index + 1}`}
+                className="w-full h-full object-contain"
+              /> */}
                         </PCBrowserFrame>
                       </div>
                     ) : deviceType === "tv" ? (
-                      <div className="w-full max-w-md">
+                      <div className="w-full">
                         <TVFrame>
                           {/* <ImageWithFallback
-                            src={image}
-                            alt={`${title} 인터페이스 ${index + 1}`}
-                            className="w-full h-full object-cover"
-                          /> */}
+                src={image}
+                alt={`${title} 인터페이스 ${index + 1}`}
+                className="w-full h-full object-contain"
+              /> */}
                         </TVFrame>
                       </div>
                     ) : (
-                      <div className="flex justify-center">
-                        <div className="w-full max-w-[200px]">
-                          <MobileFrame>
-                            {/* <ImageWithFallback
-                              src={image}
-                              alt={`${title} 인터페이스 ${index + 1}`}
-                              className="w-full h-full object-cover"
-                            /> */}
-                          </MobileFrame>
-                        </div>
+                      <div className="w-full">
+                        <MobileFrame>
+                          {/* <ImageWithFallback
+                src={image}
+                alt={`${title} 인터페이스 ${index + 1}`}
+                className="w-full h-full object-contain"
+              /> */}
+                        </MobileFrame>
                       </div>
                     )}
                   </div>

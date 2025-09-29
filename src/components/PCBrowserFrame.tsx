@@ -33,15 +33,7 @@ export function PCBrowserFrame({ children }: PCBrowserFrameProps) {
             height: "300px",
           }}
         >
-          {children || (
-            <div className="h-full flex items-center justify-center text-gray-400">
-              <div className="text-center">
-                <div className="text-6xl mb-4">🌐</div>
-                <p>PC Browser Content</p>
-                <p className="text-sm">1920 × 1080</p>
-              </div>
-            </div>
-          )}
+          {children || <div></div>}
         </div>
       </div>
     </div>
