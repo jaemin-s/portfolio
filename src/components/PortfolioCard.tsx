@@ -126,7 +126,7 @@ export function PortfolioCard({ project, index }: PortfolioCardProps) {
                   //   alt={`${title} 스크린샷`}
                   //   className="w-full h-full object-cover"
                   // />
-                  <div className="h-full bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+                  <div className="w-full aspect-video bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
                     <div className="text-center p-8">
                       <div className="text-4xl mb-4">🚀</div>
                       <h3 className="text-xl mb-2">{title}</h3>
@@ -145,7 +145,7 @@ export function PortfolioCard({ project, index }: PortfolioCardProps) {
                   //   alt={`${title} TV 스크린샷`}
                   //   className="w-full h-full object-cover"
                   // />
-                  <div className="h-full bg-gradient-to-br from-purple-50 to-blue-100 flex items-center justify-center">
+                  <div className="w-full aspect-video bg-gradient-to-br from-purple-50 to-blue-100 flex items-center justify-center">
                     <div className="text-center p-8">
                       <div className="text-4xl mb-4">📺</div>
                       <h3 className="text-xl mb-2">{title}</h3>
@@ -166,7 +166,7 @@ export function PortfolioCard({ project, index }: PortfolioCardProps) {
                   //   alt={`${title} 모바일 스크린샷`}
                   //   className="w-full h-full object-cover"
                   // />
-                  <div className="h-full bg-gradient-to-b from-purple-50 to-pink-100 p-4">
+                  <div className="w-full h-full bg-gradient-to-b from-purple-50 to-pink-100 p-4">
                     <div className="text-center pt-20">
                       <div className="text-3xl mb-4">📱</div>
                       <h4 className="mb-2">{title}</h4>

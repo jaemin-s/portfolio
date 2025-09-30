@@ -27,10 +27,10 @@ export function PCBrowserFrame({ children }: PCBrowserFrameProps) {
 
         {/* Content Area */}
         <div
-          className="bg-white relative overflow-hidden"
+          className="bg-white relative overflow-hidden flex items-center justify-center"
           style={{
-            aspectRatio: "1920/1080",
-            height: "300px",
+            aspectRatio: "16/9",
+            width: "100%",
           }}
         >
           {children || <div></div>}

@@ -66,8 +66,8 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
               <div
                 className={
                   deviceType === "mobile"
-                    ? "grid grid-cols-2 gap-6"
-                    : "grid grid-cols-1 gap-6"
+                    ? "grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 place-items-center"
+                    : "grid grid-cols-1 gap-4 place-items-center"
                 }
               >
                 {additionalImages.map((image, index) => (

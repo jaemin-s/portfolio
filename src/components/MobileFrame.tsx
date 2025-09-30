@@ -8,7 +8,7 @@ interface MobileFrameProps {
 export function MobileFrame({ children, model = "iphone" }: MobileFrameProps) {
   return (
     <div className="mx-auto">
-      <div className="bg-black p-2 rounded-[2.5rem] shadow-xl w-48 mx-auto">
+      <div className="bg-black p-2 rounded-[2.5rem] shadow-xl w-40 sm:w-48 md:w-56 mx-auto">
         {/* Phone Frame */}
         <div className="bg-white rounded-[2rem] overflow-hidden relative">
           {/* Top Notch/Status Bar */}
@@ -25,7 +25,7 @@ export function MobileFrame({ children, model = "iphone" }: MobileFrameProps) {
             className="bg-white relative overflow-hidden"
             style={{
               aspectRatio: "9/19.5", // iPhone-like ratio
-              height: "400px",
+              width: "100%",
             }}
           >
             {children || <div></div>}
