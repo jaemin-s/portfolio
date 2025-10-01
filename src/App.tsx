@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useMemo } from "react";
 import { PortfolioCard } from "./components/PortfolioCard";
 import { ProjectDetail } from "./components/ProjectDetail";
 import { Button } from "./components/ui/button";
-import { ChevronDown, Github, Mail, ArrowUp, ExternalLink } from "lucide-react";
+import { ChevronDown, ArrowUp } from "lucide-react";
 import { Header } from "./components/Header";
 import ochoice1 from "/ochoice-1.png";
 import ochoice2 from "/ochoice-2.png";
