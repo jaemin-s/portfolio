@@ -24,14 +24,13 @@ export function MobileFrame({ children, model = "iphone" }: MobileFrameProps) {
           <div
             className="bg-white relative overflow-hidden"
             style={{
-              aspectRatio: "9/19.5", // iPhone-like ratio
+              aspectRatio: "9/19.5",
               width: "100%",
             }}
           >
             {children || <div></div>}
           </div>
 
-          {/* Home Indicator (for iPhone) */}
           {model === "iphone" && (
             <div className="bg-white py-2 flex justify-center">
               <div className="w-32 h-1 bg-black rounded-full opacity-30"></div>

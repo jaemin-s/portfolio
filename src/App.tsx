@@ -4,6 +4,9 @@ import { ProjectDetail } from "./components/ProjectDetail";
 import { Button } from "./components/ui/button";
 import { ChevronDown, Github, Mail, ArrowUp, ExternalLink } from "lucide-react";
 import { Header } from "./components/Header";
+import ochoice1 from "/ochoice-1.png";
+import ochoice2 from "/ochoice-2.png";
+import ochoice3 from "/ochoice-3.png";
 
 const portfolioProjects = [
   {
@@ -15,8 +18,7 @@ const portfolioProjects = [
     field: "Front-end, Back-end, Admin",
     deviceType: "tv" as const,
     url: "https://tenstory.co.kr",
-    image:
-      "https://images.unsplash.com/photo-1649451844931-57e22fc82de3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXZlbG9wbWVudCUyMGRhc2hib2FyZCUyMGludGVyZmFjZXxlbnwxfHx8fDE3NTg4NTIzODZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: ochoice1,
     technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Socket.io"],
     category: "교육 플랫폼",
     // 상세 페이지 정보
@@ -35,10 +37,7 @@ const portfolioProjects = [
     ],
     duration: "8개월",
     teamSize: 6,
-    additionalImages: [
-      "https://images.unsplash.com/photo-1587882242636-596ab6349e69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsZWFybmluZyUyMHBsYXRmb3JtJTIwZGFzaGJvYXJkfGVufDF8fHx8MTc1ODg5NDI4MXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1673515335586-f9f662c01482?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvbmxpbmUlMjBlZHVjYXRpb24lMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzU4ODk0Mjg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    ],
+    additionalImages: [ochoice2, ochoice3],
     challenge:
       "아이들의 집중력 유지와 학습 효과 측정이 가장 큰 도전이었습니다. 기존 온라인 학습의 한계를 극복하고 개인별 맞춤 학습을 제공해야 했습니다.",
     solution:

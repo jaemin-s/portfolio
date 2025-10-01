@@ -39,9 +39,7 @@ export function PortfolioCard({ project, index }: PortfolioCardProps) {
     <div className="min-h-screen flex items-center py-20">
       <div className="max-w-7xl mx-auto px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-start lg:items-center">
-          {/* 좌측: 프로젝트 정보 */}
           <div className="space-y-8 max-h-[500px] flex flex-col justify-center">
-            {/* 카테고리 뱃지 */}
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
                 <div className="w-4 h-4 bg-white rounded-sm"></div>
@@ -54,7 +52,6 @@ export function PortfolioCard({ project, index }: PortfolioCardProps) {
               </Badge>
             </div>
 
-            {/* 프로젝트 타이틀 */}
             <div>
               <h1
                 className="text-white mb-4"
@@ -67,7 +64,6 @@ export function PortfolioCard({ project, index }: PortfolioCardProps) {
               </p>
             </div>
 
-            {/* 프로젝트 상세 정보 */}
             <div className="space-y-4">
               <div className="grid grid-cols-1 gap-4">
                 <div className="bg-white/5 rounded-lg p-4 border border-white/10">
@@ -97,7 +93,6 @@ export function PortfolioCard({ project, index }: PortfolioCardProps) {
               </div>
             </div>
 
-            {/* 기술 스택 */}
             <div>
               <h3 className="text-white mb-3">기술 스택</h3>
               <div className="flex flex-wrap gap-2">
@@ -114,18 +109,17 @@ export function PortfolioCard({ project, index }: PortfolioCardProps) {
             </div>
           </div>
 
-          {/* 우측: 디바이스 프레임 */}
           <div className="flex justify-center lg:justify-end w-full items-center">
             {deviceType === "pc" ? (
               <PCBrowserFrame url={url}>
                 {image ? (
-                  <div></div>
+                  <img
+                    src={image}
+                    alt={`${title} 스크린샷`}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 ) : (
-                  // <ImageWithFallback
-                  //   src={image}
-                  //   alt={`${title} 스크린샷`}
-                  //   className="w-full h-full object-cover"
-                  // />
                   <div className="w-full aspect-video bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
                     <div className="text-center p-8">
                       <div className="text-4xl mb-4">🚀</div>
@@ -138,13 +132,13 @@ export function PortfolioCard({ project, index }: PortfolioCardProps) {
             ) : deviceType === "tv" ? (
               <TVFrame>
                 {image ? (
-                  <div></div>
+                  <img
+                    src={image}
+                    alt={`${title} TV 스크린샷`}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 ) : (
-                  // <ImageWithFallback
-                  //   src={image}
-                  //   alt={`${title} TV 스크린샷`}
-                  //   className="w-full h-full object-cover"
-                  // />
                   <div className="w-full aspect-video bg-gradient-to-br from-purple-50 to-blue-100 flex items-center justify-center">
                     <div className="text-center p-8">
                       <div className="text-4xl mb-4">📺</div>
@@ -159,13 +153,13 @@ export function PortfolioCard({ project, index }: PortfolioCardProps) {
             ) : (
               <MobileFrame model="iphone">
                 {image ? (
-                  <div></div>
+                  <img
+                    src={image}
+                    alt={`${title} 모바일 스크린샷`}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 ) : (
-                  // <ImageWithFallback
-                  //   src={image}
-                  //   alt={`${title} 모바일 스크린샷`}
-                  //   className="w-full h-full object-cover"
-                  // />
                   <div className="w-full h-full bg-gradient-to-b from-purple-50 to-pink-100 p-4">
                     <div className="text-center pt-20">
                       <div className="text-3xl mb-4">📱</div>

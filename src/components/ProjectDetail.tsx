@@ -71,7 +71,6 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
               >
                 <ul className="space-y-6">
                   {features.map((feature, idx) => {
-                    // 문자열이 유일하면 그걸 key로 사용, 중복 시 index 보조
                     const key = feature
                       ? `${feature}-${idx}`
                       : `feature-${idx}`;
@@ -109,14 +108,12 @@ export function ProjectDetail({ project }: ProjectDetailProps) {
                   >
                     <div className="w-full">
                       {renderFrame(
-                        // 기존 주석 유지(시각 동일). 실제 이미지 삽입 시 lazy 권장.
-                        // <ImageWithFallback
-                        //   src={image}
-                        //   alt={`${title} 인터페이스 ${index + 1}`}
-                        //   className="w-full h-full object-contain"
-                        //   loading="lazy"
-                        // />
-                        <></>
+                        <img
+                          src={image}
+                          alt={`${title} 인터페이스 ${index + 1}`}
+                          className="w-full h-full object-contain"
+                          loading="lazy"
+                        />
                       )}
                     </div>
                   </div>
