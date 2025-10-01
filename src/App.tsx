@@ -59,7 +59,7 @@ const portfolioProjects = [
       "기존 접속자 수 중심 지표를 확장하여 디바이스별 사용 현황과 광고 효과 지표를 제공. 운영 효율과 의사결정을 지원하는 관리자 대시보드.",
     developmentEnvironment: "Web",
     developmentLanguage: "Next.js + Typescript",
-    field: "Full-Stack Developer",
+    field: "Frontend Developer",
     deviceType: "pc" as const,
     image: dashboard1,
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Chart.js"],

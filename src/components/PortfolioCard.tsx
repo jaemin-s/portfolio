@@ -38,8 +38,8 @@ export function PortfolioCard({ project }: PortfolioCardProps) {
   return (
     <div className="min-h-screen flex items-center py-20">
       <div className="max-w-7xl mx-auto px-8 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-start lg:items-center">
-          <div className="space-y-8 max-h-[500px] flex flex-col justify-center">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-center">
+          <div className="space-y-8 flex flex-col justify-center">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
                 <div className="w-4 h-4 bg-white rounded-sm"></div>
@@ -68,7 +68,7 @@ export function PortfolioCard({ project }: PortfolioCardProps) {
               <div className="grid grid-cols-1 gap-4">
                 <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                   <div className="flex justify-between items-center">
-                    <span className="text-white/60">개발 환경</span>
+                    <span className="text-white/60 flex-none w-24 md:w-28 whitespace-nowrap">개발 환경</span>
                     <span className="text-white font-medium">
                       {developmentEnvironment}
                     </span>
@@ -77,7 +77,7 @@ export function PortfolioCard({ project }: PortfolioCardProps) {
 
                 <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                   <div className="flex justify-between items-center">
-                    <span className="text-white/60">개발 언어</span>
+                    <span className="text-white/60 flex-none w-24 md:w-28 whitespace-nowrap">개발 언어</span>
                     <span className="text-white font-medium">
                       {developmentLanguage}
                     </span>
@@ -86,7 +86,7 @@ export function PortfolioCard({ project }: PortfolioCardProps) {
 
                 <div className="bg-white/5 rounded-lg p-4 border border-white/10">
                   <div className="flex justify-between items-center">
-                    <span className="text-white/60">분야</span>
+                    <span className="text-white/60 flex-none w-24 md:w-28 whitespace-nowrap">분야</span>
                     <span className="text-white font-medium">{field}</span>
                   </div>
                 </div>
@@ -109,7 +109,7 @@ export function PortfolioCard({ project }: PortfolioCardProps) {
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end w-full items-center">
+          <div className="flex justify-center lg:justify-end w-full items-center lg:mt-0 relative z-0">
             {deviceType === "pc" ? (
               <PCBrowserFrame url={url}>
                 {image ? (
