@@ -1,5 +1,7 @@
-import { Github, Mail } from "lucide-react";
-import { Button } from "./ui/button";
+// import { Github, Mail } from "lucide-react";
+// import { Button } from "./ui/button";
+
+import { useEffect, useState } from "react";
 
 interface HeaderProps {
   title?: string;
@@ -9,11 +11,31 @@ interface HeaderProps {
 
 export function Header({
   title = "Portfolio",
-  onClickGithub,
-  onClickMail,
+  // onClickGithub,
+  // onClickMail,
 }: HeaderProps) {
+
+  const [hidden, setHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+    useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY && window.scrollY > 50) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/10">
+    <header className={`fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/10 transition-transform duration-300 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      }`}>
       <div className="max-w-7xl mx-auto px-8 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
@@ -24,42 +46,6 @@ export function Header({
           </div>
 
           <div className="flex items-center space-x-2 md:space-x-4">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-white hover:bg-white/10 hidden sm:flex"
-              onClick={onClickGithub}
-            >
-              <Github className="w-4 h-4 mr-2" />
-              GitHub
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-white hover:bg-white/10 hidden sm:flex"
-              onClick={onClickMail}
-            >
-              <Mail className="w-4 h-4 mr-2" />
-              Contact
-            </Button>
-
-            {/* 모바일용 아이콘 */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-white hover:bg-white/10 sm:hidden w-8 h-8 p-0"
-              onClick={onClickGithub}
-            >
-              <Github className="w-4 h-4" />
-            </Button>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-white hover:bg-white/10 sm:hidden w-8 h-8 p-0"
-              onClick={onClickMail}
-            >
-              <Mail className="w-4 h-4" />
-            </Button>
           </div>
         </div>
       </div>

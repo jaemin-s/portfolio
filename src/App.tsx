@@ -164,7 +164,6 @@ export default function App() {
 
   return (
     <div className="relative">
-      {/* 배경(장식) */}
       <div
         className="fixed inset-0 bg-gradient-to-br from-green-400 via-green-500 to-green-600 pointer-events-none"
         aria-hidden="true"
@@ -174,12 +173,10 @@ export default function App() {
         <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-green-900/20 to-transparent rounded-full blur-3xl" />
       </div>
 
-      {/* 메인 */}
       <main className="relative z-10">
-        {/* 헤더 */}
         <header>
           <Header
-            title="Portfolio"
+            title="재민 심 | Software Developer Portfolio"
             onClickGithub={handleClickGithub}
             onClickMail={handleClickMail}
           />
