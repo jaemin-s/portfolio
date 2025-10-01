@@ -21,127 +21,91 @@ import chart4 from "/chart-4.png"
 
 const portfolioProjects = [
   {
-    title: "텐스토리",
+    title: "오초이스(OTT TV 앱)",
     description:
-      "온라인 영어 동화 학습 솔루션으로, 아이들이 재미있게 영어를 배울 수 있도록 설계된 교육 플랫폼입니다. 인터랙티브한 스토리텔링과 학습 진도 관리 기능을 제공합니다.",
+      "케이블 VOD의 플랫폼 다양화를 위한 OTT TV 앱 서비스. 리모컨 UX 최적화와 DRM 기반 보호를 적용하여 Tizen/webOS 환경에서 안정적인 시청 경험을 제공.",
     developmentEnvironment: "Smart TV / Web",
-    developmentLanguage: "React",
-    field: "Front-end, Back-end, Admin",
+    developmentLanguage: "React + JavaScript",
+    field: "Front-end Developer",
     deviceType: "tv" as const,
-    url: "https://tenstory.co.kr",
     image: ochoice1,
-    technologies: ["React", "TypeScript", "Node.js", "MongoDB", "Socket.io"],
-    category: "교육 플랫폼",
-    // 상세 페이지 정보
+    technologies: [
+      "React",
+      "JavaScript",
+      "Shaka Player",
+      "Redux",
+      "styled-components",
+      "Tizen",
+      "webOS",
+      "DRM"
+    ],
+    category: "OTT / VOD",
     features: [
-      "인터랙티브 영어 동화 읽기",
-      "실시간 발음 평가 시스템",
-      "학습 진도 추적 및 분석",
-      "부모용 학습 리포트",
-      "게임화된 학습 요소",
+      "리모컨 포커스 UI/단축키 최적화",
+      "DRM 적용 스트리밍",
+      "유료 결제 콘텐츠 접근 흐름",
+      "멀티플랫폼 빌드/배포 자동화"
     ],
     achievements: [
-      "월 활성 사용자 10,000명 달성",
-      "평균 학습 완료율 85% 기록",
-      "부모 만족도 4.8/5.0 달성",
-      "교육부 우수 콘텐츠 선정",
+      "Intersection Observer 기반 이미지 최적화로 로딩 속도 33% 감소",
+      "플랫폼 런처 기본앱 등재 후 접속자 수 100% 증가",
+      "빌드·테스트 자동화(스크립트, Electron 테스트 환경)로 QA 효율 향상",
     ],
-    duration: "8개월",
-    teamSize: 6,
     additionalImages: [ochoice2, ochoice4, ochoice3, ochoice5],
-    challenge:
-      "아이들의 집중력 유지와 학습 효과 측정이 가장 큰 도전이었습니다. 기존 온라인 학습의 한계를 극복하고 개인별 맞춤 학습을 제공해야 했습니다.",
-    solution:
-      "게임화 요소와 AI 기반 개인화 학습 시스템을 도입했습니다. 실시간 음성 인식 기술로 발음을 평가하고, 학습 패턴 분석을 통해 맞춤형 콘텐츠를 제공했습니다.",
-    outcome:
-      "출시 6개월 만에 10,000명의 활성 사용자를 확보했으며, 85%의 높은 학습 완료율을 달성했습니다. 교육부 우수 콘텐츠로 선정되어 공신력을 인정받았습니다.",
-  },
-    {
-    title: "기업 관리 시스템",
-    description:
-      "중소기업을 위한 통합 관리 솔루션으로, 직원 관리, 프로젝트 추적, 재무 관리 등 비즈니스 운영에 필요한 모든 기능을 하나의 플랫폼에서 제공합니다.",
-    developmentEnvironment: "Web",
-    developmentLanguage: "Vue.js",
-    field: "Full-Stack Development",
-    deviceType: "pc" as const,
-    url: "https://enterprise-system.com",
-    image:
-      dashboard1,
-    technologies: ["Vue.js", "Laravel", "MySQL", "Docker", "AWS"],
-    category: "기업 솔루션",
-    // 상세 페이지 정보
-    features: [
-      "통합 대시보드 및 KPI 모니터링",
-      "프로젝트 및 태스크 관리",
-      "직원 근태 및 급여 관리",
-      "재무 관리 및 회계 연동",
-      "실시간 알림 및 보고서",
-    ],
-    achievements: [
-      "30개 기업 도입 완료",
-      "업무 효율성 40% 향상",
-      "고객 만족도 4.7/5.0 달성",
-      "연간 매출 5억원 달성",
-    ],
-    duration: "12개월",
-    teamSize: 8,
-    additionalImages: [
-      dashboard3,
-      dashboard5,
-    ],
-    challenge:
-      "각기 다른 중소기업의 다양한 요구사항을 하나의 시스템으로 통합하고, 복잡한 비즈니스 로직을 단순화하는 것이 가장 큰 도전이었습니다.",
-    solution:
-      "모듈화된 아키텍처를 설계하여 커스터마이징 가능한 시스템을 구축했습니다. 사용자 친화적인 인터페이스와 강력한 분석 도구를 제공했습니다.",
-    outcome:
-      "30개 기업에 성공적으로 도입되어 평균 40%의 업무 효율성 향상을 달성했습니다. 연간 5억원의 매출을 기록하며 B2B SaaS 시장에서 입지를 확립했습니다.",
   },
   {
-    title: "모바일 쇼핑 앱",
+    title: "Ochoice Admin",
     description:
-      "사용자 친화적인 모바일 쇼핑 경험을 제공하는 e-커머스 애플리케이션입니다. 직관적인 UI/UX와 빠른 결제 시스템으로 최적화된 쇼핑 환경을 구현했습니다.",
+      "기존 접속자 수 중심 지표를 확장하여 디바이스별 사용 현황과 광고 효과 지표를 제공. 운영 효율과 의사결정을 지원하는 관리자 대시보드.",
     developmentEnvironment: "Web",
-    developmentLanguage: "React Native",
-    field: "Mobile App Development",
+    developmentLanguage: "Next.js + Typescript",
+    field: "Full-Stack Developer",
     deviceType: "pc" as const,
-    url: "https://shopping-app.com",
-    image:
-      chart1,
-    technologies: [
-      "React Native",
-      "Redux",
-      "Firebase",
-      "Stripe",
-      "Push Notifications",
-    ],
-    category: "E-커머스",
-    // 상세 페이지 정보
+    image: dashboard1,
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Chart.js"],
+    category: "운영 대시보드",
     features: [
-      "원터치 결제 시스템",
-      "AI 기반 상품 추천",
-      "실시간 배송 추적",
-      "위시리스트 및 찜 기능",
-      "소셜 로그인 통합",
+      "콘텐츠 상태/편성 현황 모니터링",
+      "재생·에러 로그 기반 차트",
+      "디바이스별·광고 효과 지표",
+      "운영 태스크 워크플로우"
     ],
     achievements: [
-      "다운로드 수 50,000+ 달성",
-      "평균 전환율 12% 기록",
-      "사용자 평점 4.6/5.0 유지",
-      "일 평균 거래액 500만원 달성",
+      "편성 의사결정용 지표 추가로 기획·편성 검토 리드타임 단축",
+      "라이선스 만료 콘텐츠의 수동 모니터링을 대시보드 참조 방식으로 전환",
     ],
-    duration: "5개월",
-    teamSize: 4,
-    additionalImages: [
-      chart2,
-      chart3,
-      chart4
+    additionalImages: [dashboard3, dashboard5],
+  },
+  {
+    title: "StockPlay (게임처럼 즐기는 투자)",
+    description:
+      "주식 초심자를 위한 실시간 종목 조회·뉴스·모의투자 서비스. React 기반 프론트엔드와 Spring Boot 서버를 연계해 소셜 로그인, 간편 결제 등 핵심 기능을 제공.",
+    developmentEnvironment: "Web",
+    developmentLanguage: "React + JavaScript / Spring Boot (Java)",
+    field: "Team Lead & Full-Stack Developer",
+    deviceType: "pc" as const,
+    image: chart1,
+    technologies: ["React",
+    "Chart.js",
+    "Spring Boot",
+    "MySQL",
+    "AWS EC2",
+    "공공데이터 API",
+    "한국투자증권 API"],
+    category: "금융 / 투자",
+    features: [
+    "실시간 시세 차트",
+    "종목 뉴스 연계",
+    "모의투자·랭킹",
+    "소셜 로그인 및 간편 결제",
+    "관리자 페이지로 종목/공지 관리"
     ],
-    challenge:
-      "모바일 환경에서 복잡한 쇼핑 과정을 단순화하고, 높은 구매 전환율을 달성하는 것이 주요 과제였습니다.",
-    solution:
-      "UX 리서치를 통해 사용자 여정을 최적화하고, 원터치 결제와 AI 추천 시스템을 구현했습니다. 성능 최적화로 로딩 시간을 50% 단축했습니다.",
-    outcome:
-      "출시 후 3개월 만에 50,000+ 다운로드를 기록했으며, 12%의 높은 전환율을 달성했습니다. 일 평균 거래액 500만원을 달성하며 성공적인 런칭을 이뤘습니다.",
+    achievements: [
+      "팀 리더로 프로젝트 진행 총괄 및 주요 기능 구현",
+      "AWS EC2 기반 첫 배포 경험으로 외부 접속 서비스 환경 구축",
+      "일부 API CORS 이슈를 AWS API Gateway로 신속하게 해결"
+    ],
+    additionalImages: [chart2, chart3, chart4],
   },
 ];
 
