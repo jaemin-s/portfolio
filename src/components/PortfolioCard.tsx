@@ -21,7 +21,7 @@ interface PortfolioCardProps {
   index: number;
 }
 
-export function PortfolioCard({ project, index }: PortfolioCardProps) {
+export function PortfolioCard({ project }: PortfolioCardProps) {
   const {
     title,
     description,
@@ -118,6 +118,7 @@ export function PortfolioCard({ project, index }: PortfolioCardProps) {
                     alt={`${title} 스크린샷`}
                     loading="lazy"
                     decoding="async"
+                    className="w-full h-full object-contain"
                   />
                 ) : (
                   <div className="w-full aspect-video bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">

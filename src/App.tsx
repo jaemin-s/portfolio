@@ -5,9 +5,19 @@ import { ProjectDetail } from "./components/ProjectDetail";
 import { Button } from "./components/ui/button";
 import { ChevronDown, ArrowUp } from "lucide-react";
 import { Header } from "./components/Header";
-import ochoice1 from "/ochoice-1.png";
-import ochoice2 from "/ochoice-2.png";
-import ochoice3 from "/ochoice-3.png";
+import ochoice1 from "/ochoice-1.webp";
+import ochoice2 from "/ochoice-2.webp";
+import ochoice3 from "/ochoice-3.webp";
+import ochoice4 from "/ochoice-4.webp";
+import ochoice5 from "/ochoice-5.webp";
+import dashboard1 from "/dashboard-1.png"
+import dashboard3 from "/dashboard-3.png"
+import dashboard5 from "/dashboard-5.png"
+import chart1 from "/chart-1.png"
+import chart2 from "/chart-2.png"
+import chart3 from "/chart-3.png"
+import chart4 from "/chart-4.png"
+
 
 const portfolioProjects = [
   {
@@ -38,7 +48,7 @@ const portfolioProjects = [
     ],
     duration: "8개월",
     teamSize: 6,
-    additionalImages: [ochoice2, ochoice3],
+    additionalImages: [ochoice2, ochoice4, ochoice3, ochoice5],
     challenge:
       "아이들의 집중력 유지와 학습 효과 측정이 가장 큰 도전이었습니다. 기존 온라인 학습의 한계를 극복하고 개인별 맞춤 학습을 제공해야 했습니다.",
     solution:
@@ -46,17 +56,57 @@ const portfolioProjects = [
     outcome:
       "출시 6개월 만에 10,000명의 활성 사용자를 확보했으며, 85%의 높은 학습 완료율을 달성했습니다. 교육부 우수 콘텐츠로 선정되어 공신력을 인정받았습니다.",
   },
+    {
+    title: "기업 관리 시스템",
+    description:
+      "중소기업을 위한 통합 관리 솔루션으로, 직원 관리, 프로젝트 추적, 재무 관리 등 비즈니스 운영에 필요한 모든 기능을 하나의 플랫폼에서 제공합니다.",
+    developmentEnvironment: "Web",
+    developmentLanguage: "Vue.js",
+    field: "Full-Stack Development",
+    deviceType: "pc" as const,
+    url: "https://enterprise-system.com",
+    image:
+      dashboard1,
+    technologies: ["Vue.js", "Laravel", "MySQL", "Docker", "AWS"],
+    category: "기업 솔루션",
+    // 상세 페이지 정보
+    features: [
+      "통합 대시보드 및 KPI 모니터링",
+      "프로젝트 및 태스크 관리",
+      "직원 근태 및 급여 관리",
+      "재무 관리 및 회계 연동",
+      "실시간 알림 및 보고서",
+    ],
+    achievements: [
+      "30개 기업 도입 완료",
+      "업무 효율성 40% 향상",
+      "고객 만족도 4.7/5.0 달성",
+      "연간 매출 5억원 달성",
+    ],
+    duration: "12개월",
+    teamSize: 8,
+    additionalImages: [
+      dashboard3,
+      dashboard5,
+    ],
+    challenge:
+      "각기 다른 중소기업의 다양한 요구사항을 하나의 시스템으로 통합하고, 복잡한 비즈니스 로직을 단순화하는 것이 가장 큰 도전이었습니다.",
+    solution:
+      "모듈화된 아키텍처를 설계하여 커스터마이징 가능한 시스템을 구축했습니다. 사용자 친화적인 인터페이스와 강력한 분석 도구를 제공했습니다.",
+    outcome:
+      "30개 기업에 성공적으로 도입되어 평균 40%의 업무 효율성 향상을 달성했습니다. 연간 5억원의 매출을 기록하며 B2B SaaS 시장에서 입지를 확립했습니다.",
+  },
   {
     title: "모바일 쇼핑 앱",
     description:
       "사용자 친화적인 모바일 쇼핑 경험을 제공하는 e-커머스 애플리케이션입니다. 직관적인 UI/UX와 빠른 결제 시스템으로 최적화된 쇼핑 환경을 구현했습니다.",
-    developmentEnvironment: "Mobile",
+    developmentEnvironment: "Web",
     developmentLanguage: "React Native",
     field: "Mobile App Development",
-    deviceType: "mobile" as const,
+    deviceType: "pc" as const,
     url: "https://shopping-app.com",
     image:
-      "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXNpZ24lMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzU4ODE1Mzk0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      chart1,
     technologies: [
       "React Native",
       "Redux",
@@ -82,8 +132,9 @@ const portfolioProjects = [
     duration: "5개월",
     teamSize: 4,
     additionalImages: [
-      "https://images.unsplash.com/photo-1757301714935-c8127a21abc6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBzaG9wcGluZyUyMGFwcCUyMGludGVyZmFjZXxlbnwxfHx8fDE3NTg4MTMzNzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1578070040595-02f440d038a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzaG9wcGluZyUyMGNhcnQlMjBtb2JpbGUlMjBhcHB8ZW58MXx8fHwxNzU4ODk0Mjg5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      chart2,
+      chart3,
+      chart4
     ],
     challenge:
       "모바일 환경에서 복잡한 쇼핑 과정을 단순화하고, 높은 구매 전환율을 달성하는 것이 주요 과제였습니다.",
@@ -91,46 +142,6 @@ const portfolioProjects = [
       "UX 리서치를 통해 사용자 여정을 최적화하고, 원터치 결제와 AI 추천 시스템을 구현했습니다. 성능 최적화로 로딩 시간을 50% 단축했습니다.",
     outcome:
       "출시 후 3개월 만에 50,000+ 다운로드를 기록했으며, 12%의 높은 전환율을 달성했습니다. 일 평균 거래액 500만원을 달성하며 성공적인 런칭을 이뤘습니다.",
-  },
-  {
-    title: "기업 관리 시스템",
-    description:
-      "중소기업을 위한 통합 관리 솔루션으로, 직원 관리, 프로젝트 추적, 재무 관리 등 비즈니스 운영에 필요한 모든 기능을 하나의 플랫폼에서 제공합니다.",
-    developmentEnvironment: "Web",
-    developmentLanguage: "Vue.js",
-    field: "Full-Stack Development",
-    deviceType: "pc" as const,
-    url: "https://enterprise-system.com",
-    image:
-      "https://images.unsplash.com/photo-1694599048261-a1de00f0117e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHx8ZS1jb21tZXJjZSUyMHdlYnNpdGUlMjBkZXNpZ258ZW58MXx8fHwxNzU4NzUzNjk4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    technologies: ["Vue.js", "Laravel", "MySQL", "Docker", "AWS"],
-    category: "기업 솔루션",
-    // 상세 페이지 정보
-    features: [
-      "통합 대시보드 및 KPI 모니터링",
-      "프로젝트 및 태스크 관리",
-      "직원 근태 및 급여 관리",
-      "재무 관리 및 회계 연동",
-      "실시간 알림 및 보고서",
-    ],
-    achievements: [
-      "30개 기업 도입 완료",
-      "업무 효율성 40% 향상",
-      "고객 만족도 4.7/5.0 달성",
-      "연간 매출 5억원 달성",
-    ],
-    duration: "12개월",
-    teamSize: 8,
-    additionalImages: [
-      "https://images.unsplash.com/photo-1726137065566-153debe32a53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMG1hbmFnZW1lbnQlMjBzeXN0ZW18ZW58MXx8fHwxNzU4ODk0MjkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwZGFzaGJvYXJkJTIwYW5hbHl0aWNzfGVufDF8fHx8MTc1ODc5NTAxMnww&ixlib=rb-4.1.0&q=80&w=1080",
-    ],
-    challenge:
-      "각기 다른 중소기업의 다양한 요구사항을 하나의 시스템으로 통합하고, 복잡한 비즈니스 로직을 단순화하는 것이 가장 큰 도전이었습니다.",
-    solution:
-      "모듈화된 아키텍처를 설계하여 커스터마이징 가능한 시스템을 구축했습니다. 사용자 친화적인 인터페이스와 강력한 분석 도구를 제공했습니다.",
-    outcome:
-      "30개 기업에 성공적으로 도입되어 평균 40%의 업무 효율성 향상을 달성했습니다. 연간 5억원의 매출을 기록하며 B2B SaaS 시장에서 입지를 확립했습니다.",
   },
 ];
 
