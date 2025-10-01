@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { PortfolioCard } from "./components/PortfolioCard";
 import { ProjectDetail } from "./components/ProjectDetail";
 import { Button } from "./components/ui/button";
@@ -138,81 +138,103 @@ export default function App() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentSection, setCurrentSection] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY;
-      const maxScroll =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (scrolled / maxScroll) * 100;
-      setScrollProgress(progress);
+  const totalSections = useMemo(() => portfolioProjects.length * 2, []);
 
-      // 현재 섹션 계산 (각 프로젝트당 2개 섹션)
-      const sectionHeight = window.innerHeight;
-      const section = Math.min(
-        Math.floor(scrolled / sectionHeight),
-        portfolioProjects.length * 2 - 1
-      );
-      setCurrentSection(section);
+  useEffect(() => {
+    let ticking = false;
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+
+      requestAnimationFrame(() => {
+        const scrolled = window.scrollY || 0;
+        const doc = document.documentElement;
+        const maxScroll = Math.max(1, doc.scrollHeight - window.innerHeight); // 0 분모 방지
+        const progress = (scrolled / maxScroll) * 100;
+        setScrollProgress(progress);
+
+        const sectionHeight = window.innerHeight || 1;
+        const section = Math.min(
+          Math.floor(scrolled / sectionHeight),
+          totalSections - 1
+        );
+        setCurrentSection(section);
+
+        ticking = false;
+      });
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll(); // 초기 상태 동기화
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [totalSections]);
+
+  const scrollToSection = useCallback((index: number) => {
+    const sectionHeight = window.innerHeight || 0;
+    window.scrollTo({ top: sectionHeight * index, behavior: "smooth" });
   }, []);
 
-  const scrollToSection = (index: number) => {
-    const sectionHeight = window.innerHeight;
-    window.scrollTo({
-      top: sectionHeight * index,
-      behavior: "smooth",
-    });
-  };
+  const scrollToTop = useCallback(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  const handleClickGithub = useCallback(() => {
+    window.open("https://github.com/your-id", "_blank", "noopener,noreferrer");
+  }, []);
+
+  const handleClickMail = useCallback(() => {
+    window.location.href = "mailto:you@example.com";
+  }, []);
 
   return (
     <div className="relative">
-      {/* 배경 그라데이션 */}
-      <div className="fixed inset-0 bg-gradient-to-br from-green-400 via-green-500 to-green-600">
-        <div className="absolute inset-0 bg-gradient-to-t from-green-800/20 to-transparent"></div>
-        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-white/5 to-transparent rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-green-900/20 to-transparent rounded-full blur-3xl"></div>
+      {/* 배경(장식) */}
+      <div
+        className="fixed inset-0 bg-gradient-to-br from-green-400 via-green-500 to-green-600 pointer-events-none"
+        aria-hidden="true"
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-green-800/20 to-transparent" />
+        <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-bl from-white/5 to-transparent rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-green-900/20 to-transparent rounded-full blur-3xl" />
       </div>
 
-      {/* 메인 콘텐츠 */}
-      <div className="relative z-10">
+      {/* 메인 */}
+      <main className="relative z-10">
         {/* 헤더 */}
-        <Header
-          title="Portfolio"
-          onClickGithub={() =>
-            window.open("https://github.com/your-id", "_blank")
-          }
-          onClickMail={() => (window.location.href = "mailto:you@example.com")}
-        ></Header>
+        <header>
+          <Header
+            title="Portfolio"
+            onClickGithub={handleClickGithub}
+            onClickMail={handleClickMail}
+          />
+        </header>
 
-        {/* 프로젝트 섹션들 */}
+        {/* 프로젝트 섹션 */}
         <div className="pt-20">
-          {portfolioProjects.map((project, index) => (
-            <div key={index}>
-              {/* 메인 카드 섹션 */}
-              <section id={`project-${index}-main`} className="min-h-screen">
-                <PortfolioCard project={project} index={index} />
-              </section>
+          {portfolioProjects.map((project, index) => {
+            const key = `${project.title}-${index}`;
+            return (
+              <div key={key}>
+                {/* 메인 카드 */}
+                <section id={`project-${index}-main`} className="min-h-screen">
+                  <PortfolioCard project={project} index={index} />
+                </section>
 
-              {/* 상세 페이지 섹션 */}
-              <section id={`project-${index}-detail`} className="min-h-screen">
-                <ProjectDetail project={project} />
-              </section>
-            </div>
-          ))}
+                {/* 상세 */}
+                <section
+                  id={`project-${index}-detail`}
+                  className="min-h-screen"
+                >
+                  <ProjectDetail project={project as any} />
+                </section>
+              </div>
+            );
+          })}
         </div>
 
-        {/* 스크롤 진행률 - PC 버전 */}
-        <div className="hidden lg:block fixed right-8 top-1/2 transform -translate-y-1/2 z-50">
+        {/* 스크롤 진행률 - PC */}
+        <aside className="hidden lg:block fixed right-8 top-1/2 -translate-y-1/2 z-50">
           <div className="bg-white/10 backdrop-blur-md rounded-lg px-4 py-6 border border-white/20">
             <div className="text-center">
               <div className="text-white text-2xl font-bold">
@@ -223,54 +245,55 @@ export default function App() {
                 <div
                   className="absolute bottom-0 left-0 right-0 bg-white rounded-full transition-all duration-300"
                   style={{ height: `${scrollProgress}%` }}
-                ></div>
+                />
               </div>
               <div className="text-white/40 text-xs mt-2">
-                Section {currentSection + 1} / {portfolioProjects.length * 2}
+                Section {currentSection + 1} / {totalSections}
               </div>
             </div>
           </div>
-        </div>
+        </aside>
 
-        {/* 스크롤 진행률 - 모바일 버전 (상단 바) */}
-        <div className="lg:hidden fixed top-0 left-0 right-0 z-40">
+        {/* 스크롤 진행률 - 모바일 상단 바 */}
+        <div
+          className="lg:hidden fixed top-0 left-0 right-0 z-40"
+          aria-hidden="true"
+        >
           <div
             className="h-1 bg-white/30 transition-all duration-300"
             style={{ width: `${scrollProgress}%` }}
-          ></div>
+          />
         </div>
 
-        {/* 스크롤 도움 버튼들 - PC 버전 */}
+        {/* 스크롤 도움 버튼 - PC */}
         <div className="hidden md:flex fixed bottom-8 right-8 z-50 flex-col space-y-2">
-          {/* 다음 섹션으로 */}
           <Button
             variant="ghost"
             size="sm"
             onClick={() =>
-              scrollToSection(
-                Math.min(currentSection + 1, portfolioProjects.length * 2 - 1)
-              )
+              scrollToSection(Math.min(currentSection + 1, totalSections - 1))
             }
             className="text-white hover:bg-white/10 rounded-full w-12 h-12 p-0 flex flex-col items-center"
-            disabled={currentSection >= portfolioProjects.length * 2 - 1}
+            disabled={currentSection >= totalSections - 1}
+            aria-label="다음 섹션으로"
           >
             <ChevronDown className="w-4 h-4" />
           </Button>
 
-          {/* 맨 위로 */}
           {scrollProgress > 10 && (
             <Button
               variant="ghost"
               size="sm"
               onClick={scrollToTop}
               className="text-white hover:bg-white/10 rounded-full w-12 h-12 p-0 flex flex-col items-center"
+              aria-label="맨 위로"
             >
               <ArrowUp className="w-4 h-4" />
             </Button>
           )}
         </div>
 
-        {/* 스크롤 도움 버튼들 - 모바일 버전 (더 작고 우측 하단) */}
+        {/* 스크롤 도움 버튼 - 모바일 */}
         <div className="md:hidden fixed bottom-20 right-4 z-50">
           {scrollProgress > 10 && (
             <Button
@@ -278,14 +301,13 @@ export default function App() {
               size="sm"
               onClick={scrollToTop}
               className="text-white hover:bg-white/10 rounded-full w-10 h-10 p-0 flex items-center justify-center bg-white/10 backdrop-blur-md"
+              aria-label="맨 위로"
             >
               <ArrowUp className="w-4 h-4" />
             </Button>
           )}
         </div>
-
-        <footer className="relative z-10 pb-32 md:pb-20"></footer>
-      </div>
+      </main>
     </div>
   );
 }
